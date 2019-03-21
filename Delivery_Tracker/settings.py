@@ -39,10 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'channels',
+    'channels_redis',
     'corsheaders',
     'account',
     'driver',
-    'vehicle'
+    'vehicle',
+    'DeliveryCompany'
 
 ]
 

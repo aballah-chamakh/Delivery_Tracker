@@ -6,6 +6,6 @@ from .views import DeliveryCompanyViewset
 router = routers.DefaultRouter()
 router.register('delivery_company',DeliveryCompanyViewset)
 
-urlpattern = [
+urlpatterns = [
 path('',include(router.urls))
 ]

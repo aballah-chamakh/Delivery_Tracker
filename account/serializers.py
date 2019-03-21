@@ -2,14 +2,15 @@ from .models import User
 from rest_framework import serializers
 
 
+
 class UserSerializer(serializers.ModelSerializer):
     password = serializers.CharField(style={'input_type':'password'},write_only=True,required=True)
     password2 = serializers.CharField(style={'input_type':'password'},write_only=True,required=True)
-    profile_slug = serializers.SlugField(source='profile.slug',read_only=True)
-    profile_image = serializers.ImageField(source='profile.image',read_only=True)
+
+    #user_type = serializers.SerializerMethodField('get_user_type_info')
     class Meta :
         model = User
-        fields =('id','profile_image','profile_slug','username','email','password','password2')
+        fields =('id','username','email','password','password2','isdriver','isdeliverycompany')
     def validate(self,data):
         email = data.get('email')
         qs = User.objects.filter(email=email)
@@ -29,6 +30,18 @@ class UserSerializer(serializers.ModelSerializer):
         user_obj.set_password(password) # to save the password in a hashed format
         user_obj.save()
         return user_obj
+    # def get_user_type_info(self,user_obj):
+    #     if user.isdeliverycompany :
+    #         deliverycompany_obj = user.deliverycompany
+    #         serializer = DeliveryCompanySerializer(deliverycompany,many=False)
+    #         return serializer.data
+    #     elif user.isdriver :
+    #         driver_obj = user_obj.driver
+    #         serializer = DriverSerializer(drier_obj,many=False)
+    #         return serializer.data
+        # other then that we add on the futur isecommerce condition
+
+
 
 class SimpleUserSerializer(serializers.ModelSerializer):
     username = serializers.CharField(read_only=True)

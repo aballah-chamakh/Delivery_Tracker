@@ -6,8 +6,8 @@ from rest_framework import status
 from .models import DeliveryCompany
 from .serializers import DeliveryCompanySerializer
 # from driver.models import Driver
-from driver.serilaizers import DriverSerializer
-from vehicle.serializer import VehicleSerializer
+from driver.serializers import DriverSerializer
+from vehicle.serializers import VehicleSerializer
 
 class DeliveryCompanyViewset(ModelViewSet):
     queryset = DeliveryCompany.objects.all()

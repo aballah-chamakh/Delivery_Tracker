@@ -98,26 +98,12 @@ class User(AbstractBaseUser):
     def is_active(self):
 
         return self.active
-
-
-class Profile(models.Model):
-    user = models.OneToOneField(User,on_delete=models.CASCADE)
-    image = models.ImageField(default='defaultProfile.png')
-    slug = models.SlugField(blank=True,null=True)
-    summary = models.TextField(blank=True,null=True)
-
-    @property
-    def owner(self):
-        return self.user
-
-
-
-@receiver(post_save, sender=User)
-def create_user_profile(sender, instance, created, **kwargs):
-    if created :
-        profile_obj = Profile.objects.create(user=instance)
-
-@receiver(pre_save, sender=Profile)
-def set_profile_slug(sender, instance, **kwargs):
-    if not instance.slug :
-        instance.slug = unique_slug_generator(instance)
+# @receiver(post_save, sender=User)
+# def create_user_profile(sender, instance, created, **kwargs):
+#     if created :
+#         profile_obj = Profile.objects.create(user=instance)
+#
+# @receiver(pre_save, sender=Profile)
+# def set_profile_slug(sender, instance, **kwargs):
+#     if not instance.slug :
+#         instance.slug = unique_slug_generator(instance)
