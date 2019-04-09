@@ -7,3 +7,6 @@ by tracking them on real time
 - DjangorestFramework <br/>
 - Django Channels <br/>
 - React js <br/>
+## some image for the app 
+<img src='https://github.com/aballah-chamakh/Delivery_Tracker/blob/master/dt_map.png' /> <br/>
+<img src='https://github.com/aballah-chamakh/Delivery_Tracker/blob/master/dt_vehicles.png' />
