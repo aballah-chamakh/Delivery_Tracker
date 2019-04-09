@@ -8,7 +8,7 @@ by tracking them on real time
 - Django Channels <br/>
 - React js <br/>
 ## testing
-because this app still under that's mean i have no drivers to track and in order to solve this problem in decide to write a simple python scritp that will send some fake location data about a paticular driver wich will allow me watching this driver moving on the map .
+because this app still under that's mean i have no drivers to track and in order to solve this problem in decide to write a simple python scritp that will send some fake location data about a paticular driver wich will allow me watching this driver moving on the map . <br/>
 the repo for the python script : https://github.com/aballah-chamakh/DeliveryTrackerFakeDriver
 ## some image for the app 
 <img src='https://github.com/aballah-chamakh/Delivery_Tracker/blob/master/dt_map.png' /> <br/><br/><br/><br/>
